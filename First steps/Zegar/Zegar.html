@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Odliczanie czasu</title>
+        <!--Dołączenie pliku javascript-->
+        <script type="text/javascript" src="Zegar.js"></script>
+        <!--Dodanie ramki dla obiektu-->
+        <style> 
+            body {
+                background-color: #FF5733;
+                display: flex;          /*centrowanie zegara*/
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                
+            }
+            #czas {
+                border: 5px solid black;    /*styl*/
+                padding: 10px;
+                font-size: 24px;
+                display: inline-block;
+                text-align: center;
+            }
+
+        </style>
+    </head>
+    <body onload="mijanie();"> <!--Aktywowanie funkcji-->
+        <!--Pobieranie czasu z kodu javascript-->
+        <div id="czas"></div> 
+
+    </body>
+</html>
