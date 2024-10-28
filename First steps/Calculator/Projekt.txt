@@ -1,0 +1,15 @@
+Projekt: "Prosty Kalkulator"
+
+Opis:
+Stwórz bardzo prosty kalkulator, który pozwala na wykonanie podstawowych operacji matematycznych: dodawanie, odejmowanie, mnożenie i dzielenie. Wprowadzenie liczb i operacji oraz wyświetlanie wyniku powinno odbywać się w podstawowym formularzu.
+
+Kroki do wykonania:
+
+    HTML:
+        Stwórz formularz z dwoma polami tekstowymi do wpisania liczb i rozwijanym menu lub przyciskami do wyboru operacji (dodawanie, odejmowanie, mnożenie, dzielenie).
+        Dodaj przycisk „Oblicz” i miejsce na wyświetlenie wyniku.
+
+    JavaScript:
+        Pobierz liczby wpisane przez użytkownika oraz wybraną operację po kliknięciu przycisku „Oblicz”.
+        Wykonaj odpowiednią operację matematyczną na tych liczbach (np. dodaj, jeśli użytkownik wybrał dodawanie).
+        Wyświetl wynik na stronie (np. obok przycisku lub w osobnym elemencie).
