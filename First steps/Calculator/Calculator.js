@@ -12,7 +12,7 @@ function przyciski(id) {
     usun = false
     poleoblicz.value += id
     przycisk = true
-    let znaki = ["+","-","*","/"]
+    let znaki = ["+","-","*","/","^","%"]
     if (znaki.includes(id)) {
         znak = true
         operator = id
@@ -78,7 +78,15 @@ function obliczanie() {
         wynik = liczba1 * liczba2;
     } else if (operator == "/") {
         wynik = liczba1 / liczba2;
-    }   
+    } else if (operator == "^") {
+        wynik = liczba1 ** liczba2;
+    } else if (operator == "%") {
+        wynik = liczba1 % liczba2
+    }
     polewynik.value = wynik.toString();
     console.log(wynik);
+    liczba1 = wynik
+    liczba2 = "empty"
+    
+    znak = false
 }
