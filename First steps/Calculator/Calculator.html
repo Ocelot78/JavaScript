@@ -9,7 +9,9 @@
     </head>
     <body>
         <!--Budowa Strony-->
+        <div><input type="text" id="dzialanie" readonly></div>
         <input type="text" id="Kalk" placeholder="Kalkulator" readonly>
+
         <div>
             <button id="usun" onclick="usuwanie(),pobieranie_liczby('')">Clear</button>
             <button id="^" onclick="przyciski(this.id)">x^y</button>   
@@ -18,8 +20,8 @@
             <button id="7" onclick="przyciski(this.id); pobieranie_liczby(this.id);">7</button>
             <button id="8" onclick="przyciski(this.id); pobieranie_liczby(this.id);">8</button>
             <button id="9" onclick="przyciski(this.id); pobieranie_liczby(this.id);">9</button>
-            <button id="%" onclick="przyciski(this.id)">%</button>
-            <button id="&radic;" onclick="przyciski(this.id);obliczanie()">&radic;</button>
+            <button id="%" onclick="przyciski(this.id)">Resz.</button>
+            <button id="&radic;" onclick="przyciski(this.id);obliczanie()"><sup>2</sup>&radic;</button>
         </div>
         <div>
             <button id="4" onclick="przyciski(this.id); pobieranie_liczby(this.id);">4</button>

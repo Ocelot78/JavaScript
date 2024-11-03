@@ -23,9 +23,11 @@ function przyciski(id) {
     
 }
 function usuwanie() {
+    let dzialanie = document.getElementById("dzialanie");
     let poleusun = document.getElementById("Kalk");
     usun = true
     poleusun.value = ""
+    dzialanie.value = ""
     //console.log(usun)
 
     
@@ -37,6 +39,7 @@ function pobieranie_liczby(id) {
         //console.log("reset")
         znak = false
         usun = false
+
     }
 
     //wartosc = document.getElementById("Kalk").value;
@@ -67,6 +70,7 @@ function pobieranie_liczby(id) {
     console.log("liczba2 " +liczba2);
 }
 function obliczanie() {
+    let dzialanie = document.getElementById("dzialanie");
     let polewynik = document.getElementById("Kalk");
     liczba1 = parseFloat(liczba1);
     liczba2 = parseFloat(liczba2);
@@ -83,6 +87,7 @@ function obliczanie() {
     } else if (operator == "%") {
         wynik = liczba1 % liczba2
     }
+    dzialanie.value = liczba1 + operator + liczba2 + "="
     polewynik.value = wynik.toString();
     console.log(wynik);
     liczba1 = wynik
