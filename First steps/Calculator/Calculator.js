@@ -95,3 +95,23 @@ function obliczanie() {
     
     znak = false
 }
+//function oblicz_spec(id) {
+//   let dzialanie = document.getElementById("dzialanie");
+//    let polewynik = document.getElementById("Kalk");
+//    while (liczba1 != 0 && (liczba1 != "empty")) {
+//        wynik = Math.sqrt(liczba1)
+//    }
+
+//    if (liczba1 != 0 && (liczba1 != "empty")) {
+//        wynik = "ERROR"
+//        polewynik.value = wynik.toString();
+//    } else if (id = "&radic;") {
+//        wynik = Math.sqrt(liczba1)
+//    }
+
+//    dzialanie.value = id + liczba1
+//    polewynik.value = wynik.toString();
+//   console.log(wynik);
+//    liczba1 = wynik
+//    liczba2 = "empty"
+//}
