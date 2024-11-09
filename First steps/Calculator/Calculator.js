@@ -95,23 +95,19 @@ function obliczanie() {
     
     znak = false
 }
-//function oblicz_spec(id) {
-//   let dzialanie = document.getElementById("dzialanie");
-//    let polewynik = document.getElementById("Kalk");
-//    while (liczba1 != 0 && (liczba1 != "empty")) {
-//        wynik = Math.sqrt(liczba1)
-//    }
-
-//    if (liczba1 != 0 && (liczba1 != "empty")) {
-//        wynik = "ERROR"
-//        polewynik.value = wynik.toString();
-//    } else if (id = "&radic;") {
-//        wynik = Math.sqrt(liczba1)
-//    }
-
-//    dzialanie.value = id + liczba1
-//    polewynik.value = wynik.toString();
-//   console.log(wynik);
-//    liczba1 = wynik
-//    liczba2 = "empty"
-//}
+function pierwiastek() {
+    let dzialanie = document.getElementById("dzialanie");
+    let polewynik = document.getElementById("Kalk");
+    liczba1 = parseFloat(liczba1);
+if (typeof liczba1 === 'string') {
+    console.log("waiting for number " + liczba1)
+    
+} else {
+    wynik = Math.sqrt(liczba1)
+    liczenie = true
+}
+    polewynik.value = wynik.toString();
+    dzialanie.value = "\u221A" + liczba1
+    liczba1 = wynik
+    liczba2 = "empty"
+}   
