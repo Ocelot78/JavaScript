@@ -12,34 +12,36 @@
         <div><input type="text" id="dzialanie" readonly></div>
         <input type="text" id="Kalk" placeholder="Kalkulator" readonly>
 
-        <div>
+        <div id="c5" class="shared-style">
             <button id="usun" onclick="usuwanie(),pobieranie_liczby('')">Clear</button>
             <button id="^" onclick="przyciski(this.id)">x^y</button>   
+            <button id="!" onclick="przyciski(this.id);silnia()">n!</button>   
         </div>
-        <div>
+        <div id="c4" class="shared-style">
             <button id="7" onclick="przyciski(this.id); pobieranie_liczby(this.id);">7</button>
             <button id="8" onclick="przyciski(this.id); pobieranie_liczby(this.id);">8</button>
             <button id="9" onclick="przyciski(this.id); pobieranie_liczby(this.id);">9</button>
             <button id="%" onclick="przyciski(this.id)">Resz.</button>
             <button id="&radic;" onclick="pierwiastek()"><sup>2</sup>&radic;x</button>
         </div>
-        <div>
+        <div id="c3" class="shared-style">
             <button id="4" onclick="przyciski(this.id); pobieranie_liczby(this.id);">4</button>
             <button id="5" onclick="przyciski(this.id); pobieranie_liczby(this.id);">5</button>
             <button id="6" onclick="przyciski(this.id); pobieranie_liczby(this.id);">6</button>
             <button id="*" onclick="przyciski(this.id)">*</button>
-            <button id="/" onclick="przyciski(this.id)">:</button>
+            <button id=":" onclick="przyciski(this.id)">:</button>
         </div>
-        <div>
+        <div id="c2" class="shared-style">
             <button id="1" onclick="przyciski(this.id); pobieranie_liczby(this.id);">1</button>
             <button id="2" onclick="przyciski(this.id); pobieranie_liczby(this.id);">2</button>
             <button id="3" onclick="przyciski(this.id); pobieranie_liczby(this.id);">3</button>
             <button id="+" onclick="przyciski(this.id)">+</button>
             <button id="-" onclick="przyciski(this.id)">-</button>
         </div>
-        <div>
+        <div id="c1" class="shared-style">
 
             <button id="0" onclick="przyciski(this.id); pobieranie_liczby(this.id);">0</button>
+            <button id="." onclick="przyciski(this.id); pobieranie_liczby(this.id)">.</button>
             <button id="=" onclick="obliczanie()">=</button>
         </div>
    

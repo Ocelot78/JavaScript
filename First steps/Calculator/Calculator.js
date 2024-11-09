@@ -9,23 +9,33 @@ let wynik = 0
 
 function przyciski(id) {
     let poleoblicz = document.getElementById("Kalk");
+    let wpis = poleoblicz.value 
     usun = false
-    poleoblicz.value += id
     przycisk = true
-    let znaki = ["+","-","*","/","^","%"]
-    if (znaki.includes(id)) {
-        znak = true
-        operator = id
-    } //else {
-        //znak = false
-    //}
+    let znaki = ["+","-","*",":","^","%"]
+
+    if (operator && znaki.includes(id)) {
+        poleoblicz.value = wpis.slice(0, -1); 
+        operator = id; 
+        poleoblicz.value += id;  
+    } else {
+        if (znaki.includes(id)) {
+            znak = true
+            operator = id; 
+        } else {
+            poleoblicz.value += id;
+        }
+    }
     console.log("znak "+znak)
     
 }
 function usuwanie() {
     let dzialanie = document.getElementById("dzialanie");
     let poleusun = document.getElementById("Kalk");
-    usun = true
+    liczba1 = "empty"
+    liczba2 = "empty"
+    znak = false
+    usun = false
     poleusun.value = ""
     dzialanie.value = ""
     //console.log(usun)
@@ -33,17 +43,6 @@ function usuwanie() {
     
 }
 function pobieranie_liczby(id) {
-    if (usun == true) {
-        liczba1 = "empty";
-        liczba2 = "empty";
-        //console.log("reset")
-        znak = false
-        usun = false
-
-    }
-
-    //wartosc = document.getElementById("Kalk").value;
-
     if (znak == false) {
         if (przycisk == true) {
             wartosc = id;
@@ -80,34 +79,59 @@ function obliczanie() {
         wynik = liczba1 - liczba2;
     } else if (operator == "*") {
         wynik = liczba1 * liczba2;
-    } else if (operator == "/") {
+    } else if (operator == ":") {
         wynik = liczba1 / liczba2;
     } else if (operator == "^") {
         wynik = liczba1 ** liczba2;
     } else if (operator == "%") {
         wynik = liczba1 % liczba2
     }
-    dzialanie.value = liczba1 + operator + liczba2 + "="
-    polewynik.value = wynik.toString();
-    console.log(wynik);
-    liczba1 = wynik
-    liczba2 = "empty"
-    
-    znak = false
+    if (isNaN(liczba1)||isNaN(liczba2)) {
+        polewynik.value = "ERROR"
+    } else if (operator == "/" && liczba2 == 0 ){
+        dzialanie.value = liczba1 + operator + liczba2 + "="
+        polewynik.value="Nie można dzielić przez zero"
+    } else {
+        dzialanie.value = liczba1 + operator + liczba2 + "="
+        polewynik.value = wynik.toString();
+        console.log(liczba1);
+        console.log(liczba2);
+        console.log(wynik);
+        liczba1 = wynik
+        liczba2 = "empty"
+        znak = false
+    }
 }
 function pierwiastek() {
     let dzialanie = document.getElementById("dzialanie");
     let polewynik = document.getElementById("Kalk");
-    liczba1 = parseFloat(liczba1);
-if (typeof liczba1 === 'string') {
-    console.log("waiting for number " + liczba1)
-    
-} else {
-    wynik = Math.sqrt(liczba1)
-    liczenie = true
-}
-    polewynik.value = wynik.toString();
-    dzialanie.value = "\u221A" + liczba1
-    liczba1 = wynik
-    liczba2 = "empty"
+    liczba1 = parseFloat(liczba1); 
+    console.log(liczba1);   
+    if (isNaN(liczba1) || liczba1 <= 0 ) {
+        polewynik.value = "ERROR"
+    } else {
+        wynik = Math.sqrt(liczba1)
+        liczenie = true
+        polewynik.value = wynik.toString();
+        dzialanie.value = "\u221A" + liczba1
+        liczba1 = wynik
+        liczba2 = "empty"
+    }
+
 }   
+function silnia() {
+    let suma = 1
+    let dzialanie = document.getElementById("dzialanie");
+    let polewynik = document.getElementById("Kalk");
+    liczba1 = parseFloat(liczba1); 
+    console.log(liczba1);  
+    if (isNaN(liczba1) || liczba1 <= 0 || !Number.isInteger(liczba1)) {
+        polewynik.value = "ERROR"
+    } else {
+        for (let i = 1; i <= liczba1; i++) {
+            suma *= i
+        }
+        polewynik.value = suma.toString();
+        dzialanie.value = liczba1+ "!"
+    }
+}
