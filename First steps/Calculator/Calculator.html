@@ -4,7 +4,7 @@
         <meta charset="utf-8"/>
         <title>Kalkulator</title>
         <!--Plik JavaScript-->
-        <script type="text/javascript" src="Calculator.js"></script>
+        <script type="text/javascript" src="Mainfunctions.js"></script>
         <link rel="stylesheet" href="Calculator.css">
     </head>
     <body>
@@ -41,6 +41,7 @@
         <div id="c1" class="shared-style">
 
             <button id="0" onclick="przyciski(this.id); pobieranie_liczby(this.id);">0</button>
+            <button id="&plusmn; " onclick="plusminus()">&plusmn; </button>
             <button id="." onclick="przyciski(this.id); pobieranie_liczby(this.id)">.</button>
             <button id="=" onclick="obliczanie()">=</button>
         </div>
