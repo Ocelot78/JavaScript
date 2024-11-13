@@ -21,3 +21,9 @@ function mijanie() //definiowanie funkcji
     setTimeout("mijanie()",1000) //czas w milisekundach i wykonywanie funkcji co sekunde
 
 }
+function ai() { 
+    window.location.href = 'noway.html';
+}
+function wruc() { 
+    window.location.href = 'Zegar.html';
+}
