@@ -1,19 +1,8 @@
-let usun = false
-let przycisk = false
-let znak = false
-let liczba1 = "empty";
-let liczba2 = "empty";
-let wartosc = ""
-let operator = ""
-let wynik = 0
-let plusminusPF = false
+let wynik = 0 , plusminusPF = false , operator = "" , wartosc = "", usun = false , przycisk = false ,  znak = false, liczba1 = "empty" , liczba2 = "empty";
 function przyciski(id) {
-    let poleoblicz = document.getElementById("Kalk");
-    let wpis = poleoblicz.value 
+    let poleoblicz = document.getElementById("Kalk"), wpis = poleoblicz.value, znaki = ["+","-","*",":","^","%"]
     usun = false
     przycisk = true
-    let znaki = ["+","-","*",":","^","%"]
-
     if (znaki.includes(id)) {
         if (znak) {
             poleoblicz.value = wpis.slice(0, -1); 
@@ -29,21 +18,15 @@ function przyciski(id) {
             poleoblicz.value += id;
         }
     }
-    console.log("znak "+znak)
-    
 }
 function usuwanie() {
-    let dzialanie = document.getElementById("dzialanie");
-    let poleusun = document.getElementById("Kalk");
+    let dzialanie = document.getElementById("dzialanie"), poleusun = document.getElementById("Kalk");
     liczba1 = "empty"
     liczba2 = "empty"
     znak = false
     usun = false
     poleusun.value = ""
-    dzialanie.value = ""
-    //console.log(usun)
-
-    
+    dzialanie.value = ""  
 }
 function pobieranie_liczby(id) {
     if (znak == false) {
@@ -65,15 +48,9 @@ function pobieranie_liczby(id) {
             liczba2 += wartosc
         }
     }
- 
-
-    //console.log(usun);
-    console.log("liczba1 " +liczba1);
-    console.log("liczba2 " +liczba2);
 }
 function obliczanie() {
-    let dzialanie = document.getElementById("dzialanie");
-    let polewynik = document.getElementById("Kalk");
+    let dzialanie = document.getElementById("dzialanie"), polewynik = document.getElementById("Kalk");
     liczba1 = parseFloat(liczba1);
     liczba2 = parseFloat(liczba2);
     if (operator == "+"){
@@ -143,14 +120,11 @@ function plusminus() {
             console.log(liczba2)
             polewynik.value = liczba1.toString() + operator + liczba2.toString()   
         }
-   
     }
-    console.log(plusminusPF)
 }
 //Dodatkowe funkcje kalkulatora
 function pierwiastek() {
-    let dzialanie = document.getElementById("dzialanie");
-    let polewynik = document.getElementById("Kalk");
+    let dzialanie = document.getElementById("dzialanie"), polewynik = document.getElementById("Kalk");
     liczba1 = parseFloat(liczba1); 
     console.log(liczba1);   
     if (isNaN(liczba1) || liczba1 <= 0 ) {
@@ -166,9 +140,7 @@ function pierwiastek() {
 
 }   
 function silnia() {
-    let suma = 1
-    let dzialanie = document.getElementById("dzialanie");
-    let polewynik = document.getElementById("Kalk");
+    let dzialanie = document.getElementById("dzialanie"), polewynik = document.getElementById("Kalk"), suma = 1
     liczba1 = parseFloat(liczba1); 
     console.log(liczba1);  
     if (isNaN(liczba1) || liczba1 <= 0 || !Number.isInteger(liczba1)) {
