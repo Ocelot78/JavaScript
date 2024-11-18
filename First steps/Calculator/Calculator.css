@@ -1,16 +1,24 @@
 body {
-    background-color: aqua;
+    background-color: khaki;
     height: 100vh;
     margin: 0;
 }
-
 .shared-style {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 400px;
-    height: 100px;
-    border: 1px solid black;
+
+
+}
+.przyciskicss {
+    width: 25px;
+    height: 25px;
+    border: 3px solid black;
     padding: 20px;
+}
+#usun {
+    border: 3px solid black;
+    padding: 10px;
+}
+.Reszta {
+
+    border: 3px solid black;
+    padding: 5px;
 }
