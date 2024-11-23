@@ -3,22 +3,3 @@ body {
     height: 100vh;
     margin: 0;
 }
-.shared-style {
-
-
-}
-.przyciskicss {
-    width: 25px;
-    height: 25px;
-    border: 3px solid black;
-    padding: 20px;
-}
-#usun {
-    border: 3px solid black;
-    padding: 10px;
-}
-.Reszta {
-
-    border: 3px solid black;
-    padding: 5px;
-}
