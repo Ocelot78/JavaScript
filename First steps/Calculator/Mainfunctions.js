@@ -1,6 +1,6 @@
 let wynik = 0 , plusminusPF = false , operator = "" , wartosc = "", usun = false , przycisk = false ,  znak = false, liczba1 = "empty" , liczba2 = "empty";
 function przyciski(id) {
-    let poleoblicz = document.getElementById("dzialanie"), wpis = poleoblicz.value, znaki = ["+","-","*",":","^","%"]
+    let poleoblicz = document.getElementById("Kalk"), wpis = poleoblicz.value, znaki = ["+","-","*",":","^","%"]
     usun = false
     przycisk = true
     if (znaki.includes(id)) {
@@ -10,7 +10,7 @@ function przyciski(id) {
         poleoblicz.value += id;
         operator = id;
         znak = true;
-    } else { 
+    } else {
         if (znaki.includes(id)) {
             znak = true
             operator = id; 
@@ -92,8 +92,8 @@ function obliczanie() {
     }
 }
 function plusminus() {
-    let polewynik = document.getElementById("kalk");
-    let dzialanie = document.getElementById("dzialanie")
+    let polewynik = document.getElementById("Kalk");
+
     if (znak== false  && !isNaN(liczba1)) {
         liczba1 = -liczba1 
         liczba1 = parseFloat(liczba1); 
@@ -101,32 +101,24 @@ function plusminus() {
         polewynik.value = liczba1.toString()
     } else if (znak == true && !isNaN(liczba2)){
         if (operator == "+") {
-            dzialanie.value = dzialanie - liczba2
+            polewynik.value = polewynik.value - liczba2
             liczba2 = parseFloat(liczba2);
             liczba2 = -liczba2
-            dzialanie.value = liczba1.toString() + liczba2.toString() 
-            if (plusminusPF == false) {
-                plusminusPF = true
-            } else {
-                plusminusPF = false
-            }   
-        } else if (operator == "-"){
-            dzialanie.value = dzialanie - liczba2
-            liczba2 = parseFloat(liczba2)
-            liczba2 = - liczba2
-            dzialanie.value = liczba1.toString() + liczba2.toString() 
+            console.log(liczba1)
+            console.log(liczba2)
+            polewynik.value = liczba1.toString() + liczba2.toString() 
             if (plusminusPF == false) {
                 plusminusPF = true
             } else {
                 plusminusPF = false
             }
         } else{
-            dzialanie.value = dzialanie.value - liczba2
+            polewynik.value = polewynik.value - liczba2
             liczba2 = parseFloat(liczba2);
             liczba2 = -liczba2
             console.log(liczba1)
             console.log(liczba2)
-            dzialanie.value = liczba1.toString() +  + liczba2.toString()   
+            polewynik.value = liczba1.toString() + operator + liczba2.toString()   
         }
     }
 }
