@@ -1,4 +1,4 @@
-let wynik = 0 , plusminusPF = false , operator = "" , wartosc = "", usun = false , przycisk = false ,  znak = false, liczba1 = "empty" , liczba2 = "empty";
+let procentPF = false, wynik = 0 , plusminusPF = false , operator = "" , wartosc = "", usun = false , przycisk = false ,  znak = false, liczba1 = "empty" , liczba2 = "empty";
 function przyciski(id) {
     let poleoblicz = document.getElementById("dzialanie"), wpis = poleoblicz.value, znaki = ["+","-","*",":","^","%"]
     usun = false
@@ -29,6 +29,16 @@ function usuwanie() {
     poleusun.value = ""
     dzialanie.value = ""  
 }
+function CE(){
+    let dzialanie = document.getElementById("dzialanie"), poleusun = document.getElementById("Kalk");
+    if (znak == true && liczba2 == "empty"  || (znak == false)) {
+        usuwanie()
+    }else { 
+        dzialanie.value = dzialanie.value.slice(0, liczba2.length); 
+        liczba2 = "empty"
+    }
+}
+
 function pobieranie_liczby(id) {
     if (znak == false) {
         if (przycisk == true) {
@@ -93,7 +103,7 @@ function obliczanie() {
     }
 }
 function plusminus() {
-    let polewynik = document.getElementById("Kalk");
+    let polewynik = document.getElementById("dzialanie");
 
     if (znak== false  && !isNaN(liczba1)) {
         liczba1 = -liczba1 
@@ -152,5 +162,20 @@ function silnia() {
         }
         polewynik.value = suma.toString();
         dzialanie.value = liczba1+ "!"
+    }
+}
+function procent() {
+    let dzialanie = document.getElementById("dzialanie"), polewynik = document.getElementById("Kalk")
+    if (isNaN(liczba1)){
+        polewynik.value="ERROR"
+    } else if (znak== false  && !isNaN(liczba1)) {
+        liczba1 = parseFloat(liczba1); 
+        liczba1 = liczba1/100
+        dzialanie.value = liczba1.toString()
+    } else{
+        liczba2 = parseFloat(liczba2);
+        dzialanie.value = dzialanie.value - liczba2
+        liczba2 = liczba2/100
+        dzialanie.value = liczba1.toString() + operator + liczba2.toString()   
     }
 }
