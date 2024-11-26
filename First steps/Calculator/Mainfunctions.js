@@ -1,6 +1,6 @@
 let wynik = 0 , plusminusPF = false , operator = "" , wartosc = "", usun = false , przycisk = false ,  znak = false, liczba1 = "empty" , liczba2 = "empty";
 function przyciski(id) {
-    let poleoblicz = document.getElementById("Kalk"), wpis = poleoblicz.value, znaki = ["+","-","*",":","^","%"]
+    let poleoblicz = document.getElementById("dzialanie"), wpis = poleoblicz.value, znaki = ["+","-","*",":","^","%"]
     usun = false
     przycisk = true
     if (znaki.includes(id)) {
@@ -25,6 +25,7 @@ function usuwanie() {
     liczba2 = "empty"
     znak = false
     usun = false
+    plusminusPF = false
     poleusun.value = ""
     dzialanie.value = ""  
 }
