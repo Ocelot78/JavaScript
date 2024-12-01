@@ -31,7 +31,7 @@
         </nav>
         
         <section class="keypad"></section>
-        <article>
+        <article class="keypad-column">
             <button class="special" id="usun" onclick="usuwanie()">C</button>
             <button class="special" id="usun2" onclick="CE()">CE</button>
             <button class="special" id="!" onclick="przyciski(this.id); silnia()">n!</button>
@@ -41,26 +41,28 @@
             <button class="special" id="%%" onclick="procent()">%</button>
             <button class="special" id="&radic;" onclick="pierwiastek()"><sup>2</sup>&radic;x</button>
             <button class="special" id=":" onclick="przyciski(this.id)">:</button>
-        <article>
+        <article class="keypad-column">
             <button class="keypad-button" id="7" onclick="przyciski(this.id); pobieranie_liczby(this.id);">7</button>
             <button class="keypad-button" id="8" onclick="przyciski(this.id); pobieranie_liczby(this.id);">8</button>
             <button class="keypad-button" id="9" onclick="przyciski(this.id); pobieranie_liczby(this.id);">9</button>
-            <button class="special" id="*" onclick="przyciski(this.id)">*</button>
+            <button class="side" id="*" onclick="przyciski(this.id)">*</button>
         </article>
             <button class="keypad-button" id="4" onclick="przyciski(this.id); pobieranie_liczby(this.id);">4</button>
             <button class="keypad-button" id="5" onclick="przyciski(this.id); pobieranie_liczby(this.id);">5</button>
             <button class="keypad-button" id="6" onclick="przyciski(this.id); pobieranie_liczby(this.id);">6</button>
-            <button class="special" id="-" onclick="przyciski(this.id)">-</button>
-        <article>
+            <button class="side" id="-" onclick="przyciski(this.id)">-</button>
+        <article class="keypad-column">
             <button class="keypad-button" id="1" onclick="przyciski(this.id); pobieranie_liczby(this.id);">1</button>
             <button class="keypad-button" id="2" onclick="przyciski(this.id); pobieranie_liczby(this.id);">2</button>
             <button class="keypad-button" id="3" onclick="przyciski(this.id); pobieranie_liczby(this.id);">3</button>
-            <button class="special" id="+" onclick="przyciski(this.id)">+</button>
+            <button class="side" id="+" onclick="przyciski(this.id)">+</button>
         </article>
+        <article class="keypad-column">
             <button class="keypad-button" id="&plusmn;" onclick="plusminus()">&plusmn;</button>
             <button class="keypad-button" id="0" onclick="przyciski(this.id); pobieranie_liczby(this.id);">0</button>
             <button class="keypad-button" id="." onclick="przyciski(this.id); pobieranie_liczby(this.id)">.</button>
-            <button class="special" id="=" onclick="obliczanie()">=</button>
+            <button class="side" id="=" onclick="obliczanie()">=</button>
+        </article>
         </section>
     </main>
 

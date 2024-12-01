@@ -71,7 +71,11 @@ function obliczanie() {
     } else if (operator == "*") {
         wynik = liczba1 * liczba2;
     } else if (operator == ":") {
-        wynik = liczba1 / liczba2;
+        if (liczba2 == 0) {
+            wynik.value = "Undefined"
+        }else {
+            wynik = liczba1 / liczba2;
+        }
     } else if (operator == "^") {
         wynik = liczba1 ** liczba2;
     } else if (operator == "%") {
