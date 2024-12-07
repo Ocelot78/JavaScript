@@ -1,44 +1,34 @@
-let procentPF = false, wynik = 0 , plusminusPF = false , operator = "" , wartosc = "", usun = false , przycisk = false ,  znak = false, liczba1 = "empty" , liczba2 = "empty";
+let procentPF = false, wynik = 0 , plusminusPF = false , operator = "" , wartosc = "", usun = false , przycisk = false ,  znak = false, liczba1 = "empty" , liczba2 = "empty",obliczono = false;
 function przyciski(id) {
-    let poleoblicz = document.getElementById("dzialanie"), wpis = poleoblicz.value, znaki = ["+","-","*",":","^","%"]
+    let poleoblicz = document.getElementById("dzialanie"), wpis = poleoblicz.value, znaki = ["+","-","*",":","^","%"], polewynik = document.getElementById("wynik");
+    
     usun = false
     przycisk = true
-    if (znaki.includes(id)) {
-        if (znak) {
+    if (znaki.includes(id) && obliczono == false && liczba2 == "empty") {
+        console.log(liczba2)
+        if (znak && liczba2 == "empty") {
             poleoblicz.value = wpis.slice(0, -1); 
         }
+        poleoblicz.value = polewynik.value
         poleoblicz.value += id;
         operator = id;
         znak = true;
+        polewynik.value = ""
     } else {
-        if (znaki.includes(id)) {
-            znak = true
-            operator = id; 
-        } else {
-            poleoblicz.value += id;
+        if(znaki.includes(id)|| poleoblicz.value.includes("=")) {
+        } else{
+            let dlugosc1 = liczba1.length, dlugosc2 = liczba2.length 
+            if (dlugosc1 > 25 && znak == false) {
+                alert("Liczba może mieć maksymalnie 25 znaków")
+            } else if (dlugosc2 > 25 && znak == true){
+                alert("Liczba może mieć maksymalnie 25 znaków")
+            } else {
+                polewynik.value += id;
+            }
+
         }
     }
 }
-function usuwanie() {
-    let dzialanie = document.getElementById("dzialanie"), poleusun = document.getElementById("Kalk");
-    liczba1 = "empty"
-    liczba2 = "empty"
-    znak = false
-    usun = false
-    plusminusPF = false
-    poleusun.value = ""
-    dzialanie.value = ""  
-}
-function CE(){
-    let dzialanie = document.getElementById("dzialanie"), poleusun = document.getElementById("Kalk");
-    if (znak == true && liczba2 == "empty"  || (znak == false)) {
-        usuwanie()
-    }else { 
-        dzialanie.value = dzialanie.value.slice(0, liczba2.length); 
-        liczba2 = "empty"
-    }
-}
-
 function pobieranie_liczby(id) {
     if (znak == false) {
         if (przycisk == true) {
@@ -60,8 +50,28 @@ function pobieranie_liczby(id) {
         }
     }
 }
+function usuwanie() {
+    let dzialanie = document.getElementById("dzialanie"), poleusun = document.getElementById("wynik");
+    liczba1 = "empty"
+    liczba2 = "empty"
+    znak = false
+    usun = false
+    plusminusPF = false
+    obliczono = false
+    poleusun.value = ""
+    dzialanie.value = ""  
+}
+function CE(){
+    let dzialanie = document.getElementById("dzialanie"), poleusun = document.getElementById("wynik");
+    if (znak == true && liczba2 == "empty"  || (znak == false)) {
+        usuwanie()
+    }else { 
+        dzialanie.value = dzialanie.value.slice(0, -liczba2.length); 
+        liczba2 = "empty"
+    }
+}
 function obliczanie() {
-    let dzialanie = document.getElementById("dzialanie"), polewynik = document.getElementById("Kalk");
+    let dzialanie = document.getElementById("dzialanie"), polewynik = document.getElementById("wynik");
     liczba1 = parseFloat(liczba1);
     liczba2 = parseFloat(liczba2);
     if (operator == "+"){
@@ -71,8 +81,9 @@ function obliczanie() {
     } else if (operator == "*") {
         wynik = liczba1 * liczba2;
     } else if (operator == ":") {
-        if (liczba2 == 0) {
-            wynik.value = "Undefined"
+        if (liczba2 == "0") {
+            polewynik.value = "Undefined";
+            return;
         }else {
             wynik = liczba1 / liczba2;
         }
@@ -89,57 +100,47 @@ function obliczanie() {
     } else if (plusminusPF == false){
         dzialanie.value = liczba1 + operator + liczba2 + "="
         polewynik.value = wynik.toString();
-        console.log(liczba1);
-        console.log(liczba2);
-        console.log(wynik);
-        liczba1 = wynik
-        liczba2 = "empty"
-        znak = false
+        liczba1 = wynik;
+        liczba2 = "empty";
+        znak = false;
     } else if (plusminusPF == true) {
         dzialanie.value = liczba1.toString() + liczba2.toString() + "="
         polewynik.value = wynik.toString();
-        console.log(liczba1);
-        console.log(liczba2);
-        console.log(wynik);
-        liczba1 = wynik
-        liczba2 = "empty"
-        znak = false 
+        liczba1 = wynik;
+        liczba2 = "empty";
+        znak = false ;
     }
+    obliczono = true
 }
 function plusminus() {
-    let polewynik = document.getElementById("dzialanie");
+    let dzialanie = document.getElementById("dzialanie"), polewynik = document.getElementById("wynik");
 
     if (znak== false  && !isNaN(liczba1)) {
-        liczba1 = -liczba1 
+        liczba1 = -liczba1;
         liczba1 = parseFloat(liczba1); 
         console.log(liczba1)
-        polewynik.value = liczba1.toString()
+        dzialanie.value = liczba1.toString()
     } else if (znak == true && !isNaN(liczba2)){
         if (operator == "+") {
-            polewynik.value = polewynik.value - liczba2
+            dzialanie.value = dzialanie.value - liczba2
             liczba2 = parseFloat(liczba2);
             liczba2 = -liczba2
-            console.log(liczba1)
-            console.log(liczba2)
-            polewynik.value = liczba1.toString() + liczba2.toString() 
+            dzialanie.value = liczba1.toString() + "-"
             if (plusminusPF == false) {
                 plusminusPF = true
             } else {
                 plusminusPF = false
             }
         } else{
-            polewynik.value = polewynik.value - liczba2
+            dzialanie.value = dzialanie.value - liczba2
             liczba2 = parseFloat(liczba2);
             liczba2 = -liczba2
-            console.log(liczba1)
-            console.log(liczba2)
-            polewynik.value = liczba1.toString() + operator + liczba2.toString()   
+            dzialanie.value = liczba1.toString() + operator + liczba2.toString()   
         }
     }
 }
-//Dodatkowe funkcje kalkulatora
 function pierwiastek() {
-    let dzialanie = document.getElementById("dzialanie"), polewynik = document.getElementById("Kalk");
+    let dzialanie = document.getElementById("dzialanie"), polewynik = document.getElementById("wynik");
     liczba1 = parseFloat(liczba1); 
     console.log(liczba1);   
     if (isNaN(liczba1) || liczba1 <= 0 ) {
@@ -155,7 +156,7 @@ function pierwiastek() {
 
 }   
 function silnia() {
-    let dzialanie = document.getElementById("dzialanie"), polewynik = document.getElementById("Kalk"), suma = 1
+    let dzialanie = document.getElementById("dzialanie"), polewynik = document.getElementById("wynik"), suma = 1
     liczba1 = parseFloat(liczba1); 
     console.log(liczba1);  
     if (isNaN(liczba1) || liczba1 <= 0 || !Number.isInteger(liczba1)) {
@@ -169,7 +170,7 @@ function silnia() {
     }
 }
 function procent() {
-    let dzialanie = document.getElementById("dzialanie"), polewynik = document.getElementById("Kalk")
+    let dzialanie = document.getElementById("dzialanie"), polewynik = document.getElementById("wynik")
     if (isNaN(liczba1)){
         polewynik.value="ERROR"
     } else if (znak== false  && !isNaN(liczba1)) {
