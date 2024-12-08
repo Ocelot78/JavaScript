@@ -1,15 +1,15 @@
-let procentPF = false, wynik = 0 , operator = "" , wartosc = "", usun = false , przycisk = false ,  znak = false, liczba1 = "empty" , liczba2 = "empty",obliczono = false;
+let procentPF = false, wynik = 0 , operator = "" , wartosc = "", usun = false , przycisk = false ,  znak = false, liczba1 = "0" , liczba2 = "0",obliczono = false;
 
 function przyciski(id) {
     let poleoblicz = document.getElementById("dzialanie"), wpis = poleoblicz.value, znaki = ["+","-","*",":","^","%"], polewynik = document.getElementById("wynik");
     usun = false
     przycisk = true
-    if (znaki.includes(id) && obliczono == false && liczba2 == "empty") {
+    if (znaki.includes(id) && obliczono == false && liczba2 == "0") {
         console.log(liczba2)
-        if (znak && liczba2 == "empty") {
+        if (znak && liczba2 == "0") {
             poleoblicz.value = wpis.slice(0, -1); 
         }
-        poleoblicz.value = polewynik.value
+        poleoblicz.value = liczba1.toString()
         poleoblicz.value += id;
         operator = id;
         znak = true;
@@ -34,7 +34,7 @@ function pobieranie_liczby(id) {
         if (przycisk == true) {
             wartosc = id;
         }
-        if (liczba1 == "empty") {
+        if (liczba1 == "0") {
             liczba1 = wartosc;
         } else {
             liczba1 += wartosc ;
@@ -43,7 +43,7 @@ function pobieranie_liczby(id) {
         if (przycisk == true) {
             wartosc = id;
         }
-        if (liczba2 == "empty") {
+        if (liczba2 == "0") {
             liczba2 = wartosc
         } else {
             liczba2 += wartosc
@@ -52,8 +52,8 @@ function pobieranie_liczby(id) {
 }
 function usuwanie() {
     let dzialanie = document.getElementById("dzialanie"), poleusun = document.getElementById("wynik");
-    liczba1 = "empty"
-    liczba2 = "empty"
+    liczba1 = "0"
+    liczba2 = "0"
     znak = false
     usun = false
     obliczono = false
@@ -62,11 +62,11 @@ function usuwanie() {
 }
 function CE(){
     let polewynik = document.getElementById("wynik");
-    if (znak == true && liczba2 == "empty"  || (znak == false)) {
+    if (znak == true && liczba2 == "0"  || (znak == false)) {
         usuwanie()
     }else { 
         polewynik.value = polewynik.value.slice(0, -liczba2.length); 
-        liczba2 = "empty"
+        liczba2 = "0"
     }
 }
 function zmiennoprzecinkowe() {
@@ -122,7 +122,7 @@ function pierwiastek() {
         polewynik.value = wynik.toString();
         dzialanie.value = "\u221A" + liczba1
         liczba1 = wynik
-        liczba2 = "empty"
+        liczba2 = "0"
     }
 
 }   
@@ -170,7 +170,7 @@ function obliczanie() {
     } else if (operator == ":") {
         wynik = liczba1 / liczba2;
     } else if (operator == "^") {
-        wynik = liczba1 ** liczba2;
+        wynik = liczba1 ** liczba2
     } else if (operator == "%") {
         wynik = liczba1 % liczba2
     }
@@ -183,19 +183,19 @@ function obliczanie() {
         dzialanie.value = liczba1.toString() + "+" + -liczba2.toString() + "="
         zmiennoprzecinkowe()
         liczba1 = wynik
-        liczba2 = "empty"
+        liczba2 = "0"
         znak = false
     } else if (operator == "+" && liczba2 < 0) {
         dzialanie.value = liczba1.toString() + liczba2.toString() + "="
         zmiennoprzecinkowe()
         liczba1 = wynik
-        liczba2 = "empty"
+        liczba2 = "0"
         znak = false
     }else {
         dzialanie.value = liczba1.toString() + operator + liczba2.toString() + "="
         zmiennoprzecinkowe()
         liczba1 = wynik
-        liczba2 = "empty"
+        liczba2 = "0"
         znak = false
     }
     obliczono = true
