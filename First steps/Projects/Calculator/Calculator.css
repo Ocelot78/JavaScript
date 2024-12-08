@@ -20,8 +20,8 @@ body {
     -webkit-backdrop-filter: blur(3px);
     background: rgba(255, 255, 255, 0.30);
     border: 2px rgba(255, 255, 255, 0.40);
-    flex-basis: 500px; 
-    height: 600px;
+    flex-basis: 600px; 
+    height: 700px;
     padding: 25px 40px;
 }
 #dzialanie {
@@ -39,7 +39,7 @@ body {
     overflow: auto;
     padding: 15px;
     text-align: right;
-    width: 500px;
+    width: 600px;
 }
 #wynik {
     backdrop-filter: blur(4.5px);
@@ -56,15 +56,15 @@ body {
     overflow: auto;
     padding: 35px;
     text-align: right;
-    width: 460px;
+    width: 560px;
 }
 .special{
     background-color: rgba(52, 52, 52, 0.64);
     color: whitesmoke;
     border: 1.4px solid black;
     border-radius: 5px;
-    width: 129px;
-    height: 40px;
+    width: 154px;
+    height: 90px;
     font-family: "Ubuntu", sans-serif;
     font-weight: 500;
     font-style: normal;
@@ -83,7 +83,7 @@ body {
     color: whitesmoke;
     border: 1.4px solid black;
     border-radius: 5px;
-    width: 129px;
+    width: 154px;
     height: 90px;
     font-family: "Ubuntu", sans-serif;
     font-weight: 500;
@@ -104,7 +104,7 @@ body {
     color: whitesmoke;
     border: 1.4px solid black;
     border-radius: 5px;
-    width: 129px;
+    width: 154px;
     height: 90px;
     font-family: "Ubuntu", sans-serif;
     font-weight: 500;

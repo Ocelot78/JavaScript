@@ -1,4 +1,5 @@
 let procentPF = false, wynik = 0 , plusminusPF = false , operator = "" , wartosc = "", usun = false , przycisk = false ,  znak = false, liczba1 = "empty" , liczba2 = "empty",obliczono = false;
+
 function przyciski(id) {
     let poleoblicz = document.getElementById("dzialanie"), wpis = poleoblicz.value, znaki = ["+","-","*",":","^","%"], polewynik = document.getElementById("wynik");
     
@@ -18,10 +19,10 @@ function przyciski(id) {
         if(znaki.includes(id)|| poleoblicz.value.includes("=")) {
         } else{
             let dlugosc1 = liczba1.length, dlugosc2 = liczba2.length 
-            if (dlugosc1 > 25 && znak == false) {
-                alert("Liczba może mieć maksymalnie 25 znaków")
-            } else if (dlugosc2 > 25 && znak == true){
-                alert("Liczba może mieć maksymalnie 25 znaków")
+            if (dlugosc1 > 20 && znak == false) {
+                alert("Liczba może mieć maksymalnie 20 znaków")
+            } else if (dlugosc2 > 20 && znak == true){
+                alert("Liczba może mieć maksymalnie 20 znaków")
             } else {
                 polewynik.value += id;
             }
@@ -72,6 +73,7 @@ function CE(){
 }
 function obliczanie() {
     let dzialanie = document.getElementById("dzialanie"), polewynik = document.getElementById("wynik");
+    let dlugosc1 = liczba1.length, dlugosc2 = liczba2.length 
     liczba1 = parseFloat(liczba1);
     liczba2 = parseFloat(liczba2);
     if (operator == "+"){
@@ -81,12 +83,7 @@ function obliczanie() {
     } else if (operator == "*") {
         wynik = liczba1 * liczba2;
     } else if (operator == ":") {
-        if (liczba2 == "0") {
-            polewynik.value = "Undefined";
-            return;
-        }else {
-            wynik = liczba1 / liczba2;
-        }
+        wynik = liczba1 / liczba2;
     } else if (operator == "^") {
         wynik = liczba1 ** liczba2;
     } else if (operator == "%") {
@@ -94,18 +91,29 @@ function obliczanie() {
     }
     if (isNaN(liczba1)||isNaN(liczba2)) {
         polewynik.value = "ERROR"
-    } else if (operator == "/" && liczba2 == 0 ){
-        dzialanie.value = liczba1 + operator + liczba2 + "="
+    } else if (operator == ":" && liczba2 == 0 ){
         polewynik.value="Nie można dzielić przez zero"
     } else if (plusminusPF == false){
         dzialanie.value = liczba1 + operator + liczba2 + "="
-        polewynik.value = wynik.toString();
+        if (liczba1 === Math.floor(liczba1) && liczba2 != Math.floor(liczba2)){
+            polewynik.value = wynik.toFixed(dlugosc1).toString()
+        } else if (liczba2 === Math.floor(liczba2) && liczba1 != Math.floor(liczba1)){
+            polewynik.value = wynik.toFixed(dlugosc2).toString()
+        } else {
+            polewynik.value = wynik.toFixed(parseFloat(dlugosc1) + parseFloat(dlugosc2)).toString()
+        }
         liczba1 = wynik;
         liczba2 = "empty";
         znak = false;
     } else if (plusminusPF == true) {
         dzialanie.value = liczba1.toString() + liczba2.toString() + "="
-        polewynik.value = wynik.toString();
+        if (liczba1 === Math.floor(liczba1) && liczba2 != Math.floor(liczba2)){
+            polewynik.value = wynik.toFixed(liczba2.length).toString()
+        } else if (liczba2 === Math.floor(liczba2) && liczba1 != Math.floor(liczba1)){
+            polewynik.value = wynik.toFixed(liczba1.length).toString()
+        } else {
+            polewynik.value = wynik.toFixed(liczba1.length + liczba2.length).toString()
+        }
         liczba1 = wynik;
         liczba2 = "empty";
         znak = false ;
