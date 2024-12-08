@@ -3,6 +3,7 @@ html {
     height: 100%;
 }
 body {
+    overflow: hidden;
     align-items: center;
     background-color: lightskyblue;
     border: 4px grey;
