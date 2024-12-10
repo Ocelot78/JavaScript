@@ -4,8 +4,12 @@ function przyciski(id) {
     let poleoblicz = document.getElementById("dzialanie"), wpis = poleoblicz.value, znaki = ["+","-","*",":","^","%"], polewynik = document.getElementById("wynik");
     usun = false
     przycisk = true
-    if (znaki.includes(id) && obliczono == false && liczba2 == "0") {
-        console.log(liczba2)
+    if (obliczono == true && znaki.includes(id)){
+        poleoblicz.value = polewynik.value + id
+        operator = id;
+        znak = true;
+        polewynik.value = ""
+    }else if (znaki.includes(id) && obliczono == false && liczba2 == "0") {
         if (znak && liczba2 == "0") {
             poleoblicz.value = wpis.slice(0, -1); 
         }
@@ -138,6 +142,7 @@ function silnia() {
         }
         polewynik.value = suma.toString();
         dzialanie.value = liczba1+ "!"
+        liczba1 = polewynik.value
     }
 }
 function procent() {
@@ -185,18 +190,21 @@ function obliczanie() {
         liczba1 = wynik
         liczba2 = "0"
         znak = false
+        obliczono = true
     } else if (operator == "+" && liczba2 < 0) {
         dzialanie.value = liczba1.toString() + liczba2.toString() + "="
         zmiennoprzecinkowe()
         liczba1 = wynik
         liczba2 = "0"
         znak = false
+        obliczono = true
     }else {
         dzialanie.value = liczba1.toString() + operator + liczba2.toString() + "="
         zmiennoprzecinkowe()
         liczba1 = wynik
         liczba2 = "0"
         znak = false
+        obliczono = true
     }
-    obliczono = true
+
 }
