@@ -1,3 +1,38 @@
 html {
+    font-family: "IBM Plex Serif", serif;
+}
+.hidden {
+    display: none;
+}
+.zarobki {
+    width: 50%;
+    float: left;
+    font-weight: 450;
+    font-style: normal;
+}
+.wydatki {
+    width: 50%;
+    float: left;
+    font-weight: 450;
+    font-style: normal;
+}
+
+.header {
+    background-color: lightgreen;
+    text-align: center;
+    
+}
+.waluta {
+    width: 100%;
+    text-align: center;
+    font-weight: 450;
+    font-style: normal;
+}
+h2 {
+    text-align: center;
+}
+input {
+    float: right;
+    margin-right: 2%;
     
 }

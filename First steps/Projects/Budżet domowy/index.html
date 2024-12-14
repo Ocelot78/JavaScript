@@ -13,81 +13,56 @@
 <body>
     <div class="header">
         <h1>Kalkulator budżetu domowego</h1>
+    </div>  
+    <div class="col-12 waluta">
+        <h2>Wybierz walutę</h2>
+        <button id="Dolar">Dolar Amerykański &#36;</button>
+        <button id="Euro">Euro &euro;</button>
+        <button id="Funt">Funt &pound;</button>
+        <button id="PLN">Polski Złoty PLN</button>
     </div>
-    <div class="row">
-        <div class="nav">
-            <h2>Dochody</h2>
+    <div class="col-12 waluta">
+        <button id="Potwierdz">Potwierdzam</button>
+    </div>
+<div class="hidden">
+        <div class="col-6 zarobki">
+            <h2>Zarobki</h2>
+            <ul>
+                <li>Wynagrodzenie Netto:<input class="kwota"placeholder="Kwota"></li>
+                <li>Zasiłek:<input class="kwota"placeholder="Kwota"></li>
+                <li>Emerytura:<input class="kwota"placeholder="Kwota"></li>
+                <li>Alimenty:<input class="kwota"placeholder="Kwota"></li>
+                <li>Inne:<input class="kwota"placeholder="Kwota"></li>
+            </ul>
+        </div>
+        <div class="col-6 wydatki">
             <h2>Wydatki</h2>
-        </div>
-
-        <div class="col-3 zarobki">
             <ul>
-                <li>Wynagrodzenie Netto:</li>
-                <li>Zasiłek:</li>
-                <li>Emerytura:</li>
-                <li>Alimenty:</li>
-                <li>Inne:</li>
+                <li>Czynsz:<input class="kwota"placeholder="Kwota"></li>
+                <li>Gaz:<input class="kwota"placeholder="Kwota"></li>
+                <li>Prąd:<input class="kwota"placeholder="Kwota"></li>
+                <li>Woda i kanalizacja:<input class="kwota"placeholder="Kwota"></li>
+                <li>Ogrzewanie:<input class="kwota"placeholder="Kwota"></li>
+                <li>Wywóz śmieci:<input class="kwota"placeholder="Kwota"></li>
+                <li>Telefon:<input class="kwota"placeholder="Kwota"></li>
+                <li>Telewizja:<input class="kwota"placeholder="Kwota"></li>
+                <li>Internet:<input class="kwota"placeholder="Kwota"></li>
+                <li>Kredyt:<input class="kwota"placeholder="Kwota"></li>
+                <li>Hipoteka:<input class="kwota"placeholder="Kwota"></li>
+                <li>Żywność:<input class="kwota"placeholder="Kwota"></li>
+                <li>Ubrania:<input class="kwota"placeholder="Kwota"></li>
+                <li>Środki czystości:<input class="kwota"placeholder="Kwota"></li>
+                <li>Paliwo/bilety:<input class="kwota"placeholder="Kwota"></li>
+                <li>Usługi medyczne:<input class="kwota"placeholder="Kwota"></li>
+                <li>Rozrywka:<input class="kwota"placeholder="Kwota"></li>
+                <li>Edukacja:<input class="kwota"placeholder="Kwota"></li>
+                <li>Wakacje:<input class="kwota"placeholder="Kwota"></li>
+                <li>Prezenty:<input class="kwota"placeholder="Kwota"></li>
+                <li>Inne:<input class="kwota"placeholder="Kwota"></li>
             </ul>
-        </div>
-        <div class="col-3 input zarobki">
-            <ul>
-                <li><input class="kwota"placeholder="Kwota"></li>
-                <li><input class="kwota"placeholder="Kwota"></li>
-                <li><input class="kwota"placeholder="Kwota"></li>
-                <li><input class="kwota"placeholder="Kwota"></li>
-                <li><input class="kwota"placeholder="Kwota"></li>
-            </ul>
-        </div>
-        <div class="col-3 wydatki">
-            <ul>
-                <li>Czynsz:</li>
-                <li>Gaz:</li>
-                <li>Prąd:</li>
-                <li>Woda i kanalizacja:</li>
-                <li>Ogrzewanie:</li>
-                <li>Wywóz śmieci:</li>
-                <li>Telefon:</li>
-                <li>Telewizja:</li>
-                <li>Internet:</li>
-                <li>Kredyt:</li>
-                <li>Hipoteka:</li>
-                <li>Żywność:</li>
-                <li>Ubrania:</li>
-                <li>Środki czystości:</li>
-                <li>Paliwo/bilety:</li>
-                <li>Usługi medyczne:</li>
-                <li>Rozrywka:</li>
-                <li>Edukacja:</li>
-                <li>Wakacje:</li>
-                <li>Prezenty:</li>
-                <li>Inne:</li>
-            </ul>
-        <div class="col-3 input zarobki">
-            <ul>
-                <li><input class="kwota"placeholder="Kwota"></li>
-                <li><input class="kwota"placeholder="Kwota"></li>
-                <li><input class="kwota"placeholder="Kwota"></li>
-                <li><input class="kwota"placeholder="Kwota"></li>
-                <li><input class="kwota"placeholder="Kwota"></li>
-                <li><input class="kwota"placeholder="Kwota"></li>
-                <li><input class="kwota"placeholder="Kwota"></li>
-                <li><input class="kwota"placeholder="Kwota"></li>
-                <li><input class="kwota"placeholder="Kwota"></li>
-                <li><input class="kwota"placeholder="Kwota"></li>
-                <li><input class="kwota"placeholder="Kwota"></li>
-                <li><input class="kwota"placeholder="Kwota"></li>
-                <li><input class="kwota"placeholder="Kwota"></li>
-                <li><input class="kwota"placeholder="Kwota"></li>
-                <li><input class="kwota"placeholder="Kwota"></li>
-                <li><input class="kwota"placeholder="Kwota"></li>
-                <li><input class="kwota"placeholder="Kwota"></li>
-                <li><input class="kwota"placeholder="Kwota"></li>
-                <li><input class="kwota"placeholder="Kwota"></li>
-                <li><input class="kwota"placeholder="Kwota"></li>
-            </ul>
-            <button>Oblicz</button>
-        </div>    
+            <button>Oblicz</button>   
         </div>
     </div>
+</div>
 </body>
 </html>
