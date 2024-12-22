@@ -3,62 +3,298 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="main.js"></script>
+    <script src="index.js"></script>
     <link rel="stylesheet" href="index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <title>Budżet Domowy</title>
+    <title>Oszczędź to!</title>
 </head>
 <body>
     <div class="header">
-        <h1>Kalkulator budżetu domowego</h1>
-    </div>  
-    <div class="col-12 waluta">
-        <h2>Wybierz walutę</h2>
-        <button id="Dolar">Dolar Amerykański &#36;</button>
-        <button id="Euro">Euro &euro;</button>
-        <button id="Funt">Funt &pound;</button>
-        <button id="PLN">Polski Złoty PLN</button>
+        <h1>Tytuł</h1>
     </div>
-    <div class="col-12 waluta">
-        <button id="Potwierdz">Potwierdzam</button>
+    <div class="nav">
+        <button class="select">Budżet Domowy</button>
+        <button class="select">Oszczędzanie</button>
+        <button class="select">Poduszka Finasnowa</button>
+        <button class="select">Wydatki</button>
     </div>
-<div class="hidden">
+<div class="main">
         <div class="col-6 zarobki">
             <h2>Zarobki</h2>
             <ul>
-                <li>Wynagrodzenie Netto:<input class="kwota"placeholder="Kwota"></li>
-                <li>Zasiłek:<input class="kwota"placeholder="Kwota"></li>
-                <li>Emerytura:<input class="kwota"placeholder="Kwota"></li>
-                <li>Alimenty:<input class="kwota"placeholder="Kwota"></li>
-                <li>Inne:<input class="kwota"placeholder="Kwota"></li>
+                <li>
+                    Wynagrodzenie Netto:
+                    <div class="wpisanie">
+                        <input type="text" placeholder="Wpisz kwotę">
+                            <select id="wybor_waluty">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="PLN" selected>PLN</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div>
+                </li>
+                <li>Zasiłek:
+                    <div class="wpisanie">
+                        <input type="text" placeholder="Wpisz kwotę">
+                            <select id="wybor_waluty">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="PLN" selected>PLN</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div>
+                </li>
+                <li>Emerytura:
+                                        <div class="wpisanie">
+                        <input type="text" placeholder="Wpisz kwotę">
+                            <select id="wybor_waluty">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="PLN" selected>PLN</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div>
+                </li>
+                <li>Alimenty:
+                    <div class="wpisanie">
+                        <input type="text" placeholder="Wpisz kwotę">
+                            <select id="wybor_waluty">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="PLN" selected>PLN</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div>
+                    </li>
+                <li>Inne:
+                    <div class="wpisanie">
+                        <input type="text" placeholder="Wpisz kwotę">
+                            <select id="wybor_waluty">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="PLN" selected>PLN</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                </div>
+            </li>
             </ul>
         </div>
         <div class="col-6 wydatki">
             <h2>Wydatki</h2>
             <ul>
-                <li>Czynsz:<input class="kwota"placeholder="Kwota"></li>
-                <li>Gaz:<input class="kwota"placeholder="Kwota"></li>
-                <li>Prąd:<input class="kwota"placeholder="Kwota"></li>
-                <li>Woda i kanalizacja:<input class="kwota"placeholder="Kwota"></li>
-                <li>Ogrzewanie:<input class="kwota"placeholder="Kwota"></li>
-                <li>Wywóz śmieci:<input class="kwota"placeholder="Kwota"></li>
-                <li>Telefon:<input class="kwota"placeholder="Kwota"></li>
-                <li>Telewizja:<input class="kwota"placeholder="Kwota"></li>
-                <li>Internet:<input class="kwota"placeholder="Kwota"></li>
-                <li>Kredyt:<input class="kwota"placeholder="Kwota"></li>
-                <li>Hipoteka:<input class="kwota"placeholder="Kwota"></li>
-                <li>Żywność:<input class="kwota"placeholder="Kwota"></li>
-                <li>Ubrania:<input class="kwota"placeholder="Kwota"></li>
-                <li>Środki czystości:<input class="kwota"placeholder="Kwota"></li>
-                <li>Paliwo/bilety:<input class="kwota"placeholder="Kwota"></li>
-                <li>Usługi medyczne:<input class="kwota"placeholder="Kwota"></li>
-                <li>Rozrywka:<input class="kwota"placeholder="Kwota"></li>
-                <li>Edukacja:<input class="kwota"placeholder="Kwota"></li>
-                <li>Wakacje:<input class="kwota"placeholder="Kwota"></li>
-                <li>Prezenty:<input class="kwota"placeholder="Kwota"></li>
-                <li>Inne:<input class="kwota"placeholder="Kwota"></li>
+                <li>Czynsz:   
+                    <div class="wpisanie">
+                        <input type="text" placeholder="Wpisz kwotę">
+                            <select id="wybor_waluty">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="PLN" selected>PLN</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div></li>
+                <li>Gaz:                   
+                    <div class="wpisanie">
+                        <input type="text" placeholder="Wpisz kwotę">
+                            <select id="wybor_waluty">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="PLN" selected>PLN</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div></li>
+                <li>Prąd:                    
+                    <div class="wpisanie">
+                        <input type="text" placeholder="Wpisz kwotę">
+                            <select id="wybor_waluty">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="PLN" selected>PLN</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div></li>
+                <li>Woda i kanalizacja:                    
+                    <div class="wpisanie">
+                        <input type="text" placeholder="Wpisz kwotę">
+                            <select id="wybor_waluty">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="PLN" selected>PLN</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div></li>
+                <li>Ogrzewanie:                    
+                    <div class="wpisanie">
+                        <input type="text" placeholder="Wpisz kwotę">
+                            <select id="wybor_waluty">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="PLN" selected>PLN</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div></li>
+                <li>Wywóz śmieci:                    
+                    <div class="wpisanie">
+                        <input type="text" placeholder="Wpisz kwotę">
+                            <select id="wybor_waluty">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="PLN" selected>PLN</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div></li>
+                <li>Telefon:                    
+                    <div class="wpisanie">
+                        <input type="text" placeholder="Wpisz kwotę">
+                            <select id="wybor_waluty">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="PLN" selected>PLN</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div></li>
+                <li>Telewizja:                    
+                    <div class="wpisanie">
+                        <input type="text" placeholder="Wpisz kwotę">
+                            <select id="wybor_waluty">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="PLN" selected>PLN</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div></li>
+                <li>Internet:                    
+                    <div class="wpisanie">
+                        <input type="text" placeholder="Wpisz kwotę">
+                            <select id="wybor_waluty">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="PLN" selected>PLN</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div></li>
+                <li>Kredyt:                    
+                    <div class="wpisanie">
+                        <input type="text" placeholder="Wpisz kwotę">
+                            <select id="wybor_waluty">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="PLN" selected>PLN</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div></li>
+                <li>Hipoteka:                    
+                    <div class="wpisanie">
+                        <input type="text" placeholder="Wpisz kwotę">
+                            <select id="wybor_waluty">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="PLN" selected>PLN</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div></li>
+                <li>Żywność:                    
+                    <div class="wpisanie">
+                        <input type="text" placeholder="Wpisz kwotę">
+                            <select id="wybor_waluty">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="PLN" selected>PLN</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div></li>
+                <li>Ubrania:                    
+                    <div class="wpisanie">
+                        <input type="text" placeholder="Wpisz kwotę">
+                            <select id="wybor_waluty">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="PLN" selected>PLN</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div></li>
+                <li>Środki czystości:                    
+                    <div class="wpisanie">
+                        <input type="text" placeholder="Wpisz kwotę">
+                            <select id="wybor_waluty">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="PLN" selected>PLN</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div></li>
+                <li>Paliwo/bilety:                    
+                    <div class="wpisanie">
+                        <input type="text" placeholder="Wpisz kwotę">
+                            <select id="wybor_waluty">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="PLN" selected>PLN</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div></li>
+                <li>Usługi medyczne:                    
+                    <div class="wpisanie">
+                        <input type="text" placeholder="Wpisz kwotę">
+                            <select id="wybor_waluty">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="PLN" selected>PLN</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div></li>
+                <li>Rozrywka:                    
+                    <div class="wpisanie">
+                        <input type="text" placeholder="Wpisz kwotę">
+                            <select id="wybor_waluty">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="PLN" selected>PLN</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div></li>
+                <li>Edukacja:                    
+                    <div class="wpisanie">
+                        <input type="text" placeholder="Wpisz kwotę">
+                            <select id="wybor_waluty">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="PLN" selected>PLN</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div></li>
+                <li>Wakacje:                    
+                    <div class="wpisanie">
+                        <input type="text" placeholder="Wpisz kwotę">
+                            <select id="wybor_waluty">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="PLN" selected>PLN</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div></li>
+                <li>Prezenty:                    
+                    <div class="wpisanie">
+                        <input type="text" placeholder="Wpisz kwotę">
+                            <select id="wybor_waluty">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="PLN" selected>PLN</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div></li>
+                <li>Inne:                    
+                    <div class="wpisanie">
+                        <input type="text" placeholder="Wpisz kwotę">
+                            <select id="wybor_waluty">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="PLN" selected>PLN</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </div></li>
             </ul>
             <button>Oblicz</button>   
         </div>

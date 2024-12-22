@@ -1,8 +1,11 @@
 html {
     font-family: "IBM Plex Serif", serif;
 }
-.hidden {
-    display: none;
+#header {
+
+}
+#nav {
+    background-color: #AAABB8;
 }
 .zarobki {
     width: 50%;
@@ -16,23 +19,22 @@ html {
     font-weight: 450;
     font-style: normal;
 }
-
+.main {
+    background-color: #25274D;
+}
 .header {
-    background-color: lightgreen;
+    background-color: #464866;
     text-align: center;
     
-}
-.waluta {
-    width: 100%;
-    text-align: center;
-    font-weight: 450;
-    font-style: normal;
 }
 h2 {
     text-align: center;
-}
-input {
+
+}   
+.wpisanie {
     float: right;
-    margin-right: 2%;
-    
+}
+li {
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
 }
