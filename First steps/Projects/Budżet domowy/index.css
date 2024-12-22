@@ -1,11 +1,21 @@
 html {
     font-family: "IBM Plex Serif", serif;
 }
-#header {
-
+.header {
+    background-color: #464866;
+    padding: 0;
+    margin: 0;
+    flex: 105vw;
 }
-#nav {
+
+.nav {
     background-color: #AAABB8;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.select {
+    height: 6vh;
 }
 .zarobki {
     width: 50%;
@@ -23,7 +33,6 @@ html {
     background-color: #25274D;
 }
 .header {
-    background-color: #464866;
     text-align: center;
     
 }
